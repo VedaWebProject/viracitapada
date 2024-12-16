@@ -1,1 +1,87 @@
 # viracitapada
+
+Performs metrical analysis on ISO-15919-transliterated Sanskrit verses
+
+
+## Usage
+
+```py
+import viracitapada as vp
+
+vp.parse_meter("agním īḷe puróhitaṁ")  # —◡ —— ◡—◡—
+
+vp.parse_meter("úṣo yé te ̀ prá yā́meṣu yuñjáte")  # ◡— — — · ◡ ——◡ —◡— (" `" as pause)
+
+vp.parse_meter(
+    "kadā́ vaso ̀ stotráṁ háryate ā́",
+    long_mark="L",
+    short_mark="S",
+    pause_mark="P",
+)  # "SL SL P LL LSL L"
+
+vp.parse_meter("agním īḷe puróhitaṁ\nyajñásya devám r̥tvíjam\nhótāraṁ ratnadhā́tamam")
+# —◡ —— ◡—◡—\n——◡ —◡ —◡—\n——— —◡—◡—
+
+vp.parse_meter([
+    "agním īḷe puróhitaṁ",
+    "yajñásya devám r̥tvíjam",
+    "hótāraṁ ratnadhā́tamam",
+])
+# ["—◡ —— ◡—◡—", "——◡ —◡ —◡—", "——— —◡—◡—"]
+
+vp.annotate_metrical_pos("agním īḷe puróhitaṁ")  # 1_agním 3_īḷe 5_puróhitaṁ
+
+vp.annotate_metrical_pos(
+    "agním īḷe puróhitaṁ\nyajñásya devám r̥tvíjam\nhótāraṁ ratnadhā́tamam"
+)
+# 1_agním 3_īḷe 5_puróhitaṁ\n1_yajñásya 4_devám 6_r̥tvíjam\n1_hótāraṁ 4_ratnadhā́tamam
+
+vp.annotate_metrical_pos([
+    "agním īḷe puróhitaṁ",
+    "yajñásya devám r̥tvíjam",
+    "hótāraṁ ratnadhā́tamam",
+])
+# ["1_agním 3_īḷe 5_puróhitaṁ", "1_yajñásya 4_devám 6_r̥tvíjam", "1_hótāraṁ 4_ratnadhā́tamam"]
+```
+
+
+## Development
+
+This project uses [uv](https://docs.astral.sh/uv/). Install uv to make use of the following commands.
+
+Install library and dependencies
+```sh
+uv sync
+```
+
+Check code formatting, run linter
+```sh
+uv run ruff format . --check
+uv run ruff check .
+```
+
+Format code and fix linter errors
+```sh
+uv run ruff format .
+uv run ruff check . --fix
+```
+
+Run tests and measure test coverage
+```sh
+uv run coverage run -m pytest
+```
+
+Run specific tests file
+```sh
+uv run coverage run -m pytest tests/test_clean.py
+```
+
+Print coverage report of last measured test run
+```sh
+uv run coverage report -m
+```
+
+Run everything you should to make sure things are working and in good shape (on Unix-like systems)
+```sh
+./pre-commit.sh
+```

@@ -8,6 +8,9 @@ uv run ruff check . --fix
 uv run ruff format . --check
 uv run ruff check .
 
+# run mypy
+uv run mypy
+
 # Run tests and measure test coverage
 uv run coverage run -m pytest
 

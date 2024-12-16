@@ -1,7 +1,7 @@
 [project]
 name = "viracitapada"
 version = "0.1.0"
-description = "Parses ISO-15919-transliterated Sanskrit verses into a metrical notation"
+description = "Performs metrical analysis on ISO-15919-transliterated Sanskrit verses"
 readme = "README.md"
 authors = [
     { name = "bkis", email = "bkis@bkis.github.io" }

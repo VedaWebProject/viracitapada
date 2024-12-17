@@ -1,6 +1,6 @@
 [project]
 name = "viracitapada"
-version = "0.1.0"
+version = "0.1.1"
 description = "Performs metrical analysis on ISO-15919-transliterated Sanskrit verses"
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -13,7 +13,6 @@ maintainers = [
 ]
 requires-python = ">=3.10"
 classifiers = [
-    "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Development Status :: 5 - Production/Stable",
@@ -30,7 +29,7 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/VedaWebProject/viracitapada"
+Repository = "https://github.com/VedaWebProject/viracitapada"
 Issues = "https://github.com/VedaWebProject/viracitapada/issues"
 
 [build-system]

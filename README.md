@@ -20,6 +20,15 @@ Performs metrical analysis on ISO-15919-transliterated Sanskrit verses.
 > The way this library is implemented is quite naive – it uses simple string replacements matching regular expressions. This is (widely known to be) not the fastest approach to parsing things and while it probably won't be a problem in one-off applications like data transformation scripts or pipelines, it might show if used in user-facing applications that process very large amounts of data. The operations that are performed are still _very trivial_, so to find out if the performance is good enough for your use case, you should just give it a try.
 
 
+## Installation
+
+An example using pip:
+
+```sh
+pip install -U viracitapada
+```
+
+
 ## Usage
 
 `parse_meter` as well as `annotate_metrical_pos` will return the same type of data you threw at them. This can be either a single line of text as a `str` (`"line one"`), multiple lines of text as a `str` (`"line one\nline two\nline three"`) or a `list[str]` containing a line of text per string (`["line one", "line two", "line three"]`).

@@ -209,12 +209,24 @@ def parse_meter(
     short_mark: str = _SHORT,
     pause_mark: str = _PAUSE,
 ) -> str | list[str]:
-    """
+    r"""
     Parses an ISO-15919-transliterated Sanskrit string into a metrical notation with
-    long/short syllable markers.
+    long/short syllable marks.
 
-    If a syllable marker string has a length longer than 1,
+    If a mark string has a length greater than 1,
     it will be trimmed to the first character.
+
+    vp.parse_meter("agním īḷe puróhitaṁ")
+    # —◡ —— ◡—◡—
+
+    This function will return the same type of data you passed to it,
+    which can be either a single line of text as a `str` (`"line one"`),
+    multiple lines of text as a `str` (`"line one\nline two\nline three"`)
+    or a `list[str]` containing a line of text per string
+    (`["line one", "line two", "line three"]`).
+    Any other type of data will raise a `TypeError` and any different way of
+    organizing lines of text in a `str` (e.g. a `list[str]` with multiline strings)
+    will lead to undefined behaviour.
     """
 
     input_type, lines = _validate_input(lines)
@@ -266,6 +278,21 @@ def annotate_metrical_pos(
     *,
     normalization: Normalization = "NFC",
 ) -> str | list[str]:
+    r"""
+    Annotates the tokens of lines of text with their metrical position.
+
+    vp.annotate_metrical_pos("agním īḷe puróhitaṁ")
+    # 1_agním 3_īḷe 5_puróhitaṁ
+
+    This function will return the same type of data you passed to it,
+    which can be either a single line of text as a `str` (`"line one"`),
+    multiple lines of text as a `str` (`"line one\nline two\nline three"`)
+    or a `list[str]` containing a line of text per string
+    (`["line one", "line two", "line three"]`).
+    Any other type of data will raise a `TypeError` and any different way of
+    organizing lines of text in a `str` (e.g. a `list[str]` with multiline strings)
+    will lead to undefined behaviour.
+    """
     input_type, lines = _validate_input(lines)
 
     lines = [

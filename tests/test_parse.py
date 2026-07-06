@@ -30,7 +30,7 @@ def test_parse_custom_marks():
 
 def test_parse_invalid_type():
     with pytest.raises(TypeError):
-        vp.parse_meter(False)
+        vp.parse_meter(False)  # ty:ignore[invalid-argument-type]
 
 
 def test_parse_lines_multiline_str(
@@ -63,5 +63,5 @@ def test_parse_type_error():
                 "yahvā́ iva",
                 1,
                 True,
-            ]
+            ]  # ty:ignore[invalid-argument-type]
         )

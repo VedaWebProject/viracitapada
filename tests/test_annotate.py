@@ -41,5 +41,5 @@ def test_annotate_type_error():
                 "yahvā́ iva",
                 1,
                 True,
-            ]
+            ]  # ty:ignore[invalid-argument-type]
         )

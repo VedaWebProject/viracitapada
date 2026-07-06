@@ -3,7 +3,7 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/viracitapada?logo=pypi&logoColor=%23ffffff&color=%230073b7)](https://pypi.org/project/viracitapada)
 ![Tests Status](https://img.shields.io/github/actions/workflow/status/VedaWebProject/viracitapada/tests.yml?label=tests)
 [![Tests Coverage](https://img.shields.io/coverallsCoverage/github/VedaWebProject/viracitapada?branch=main&label=tests%20coverage)](https://coveralls.io/github/VedaWebProject/viracitapada?branch=main)
-![mypy](https://img.shields.io/badge/type%20checked-mypy-039dfc)
+![ty](https://img.shields.io/badge/type%20checked-ty-039dfc)
 
 
 Performs metrical analysis on ISO-15919-transliterated Sanskrit verses.

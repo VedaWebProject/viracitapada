@@ -39,17 +39,10 @@ build-backend = "hatchling.build"
 [dependency-groups]
 dev = [
     "coverage>=7.6.9",
-    "mypy>=1.13.0",
     "pytest>=8.3.4",
     "ruff>=0.8.3",
+    "ty>=0.0.56",
 ]
-
-# mypy
-
-[tool.mypy]
-python_version = "3.10"
-files = "src/viracitapada/**/*.py"
-warn_return_any = true
 
 # ruff
 

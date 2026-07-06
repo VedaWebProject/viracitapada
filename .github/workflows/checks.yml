@@ -38,4 +38,4 @@ jobs:
       - name: Check code quality
         run: uv run ruff check .
       - name: Check typing
-        run: uv run mypy
+        run: uv run ty check

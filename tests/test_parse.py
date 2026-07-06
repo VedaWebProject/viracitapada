@@ -14,6 +14,8 @@ def test_parse():
     assert vp.parse_meter("íti krátvā nyeriré") == "◡— —— —◡—"
     assert vp.parse_meter("íti krátvā nieriré") == "◡— —— ◡—◡—"
     assert vp.parse_meter("tuvā́ṁ hí agne sádam ít samanyávo") == "◡— ◡ —— ◡◡ — ◡—◡—"
+    assert vp.parse_meter("vŕ̥ṣā śukréṇa śocíṣā") == "◡— ——◡ —◡—"
+    assert vp.parse_meter("vṛ́ṣā śukréṇa śocíṣā") == "◡— ——◡ —◡—"
 
 
 def test_parse_custom_marks():

@@ -60,11 +60,16 @@ def _validate_input(lines: str | list[str]) -> tuple[InputType, list[str]]:
 
 def _clean(string: str) -> str:
     """
-    Cleans a string from acute accents (´) as well as "-", "=", "/", "\\", "?" and "_"
+    Cleans a string from acute accents (´) as well as "-", "=", "/", "\\", "?" and "_".
+    Also normalizes use of some characters across IAST and ISO-15919.
     """
     text = normalize("NFD", string)
+    # remove acute accents and unwanted characters
     text = re.sub(r"[\u0301\u0027\-+=_/\?\\]", "", text)
+    # remove combining grave accent
     text = re.sub(r"(\S)\u0300", "\1", text)
+    # replace ṛ with r̥
+    text = re.sub(r"(\u0072\u0323|\u7771)", "r̥", text)
     return normalize("NFC", text)
 
 
